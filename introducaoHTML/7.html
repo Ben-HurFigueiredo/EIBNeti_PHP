@@ -73,7 +73,7 @@
 	
 			<br><br>
 			<!-- Tipo de Área de Texto-->
-			<textarea cols="20" rows="5"> </textarea>
+			<textarea cols="40" rows="5"> </textarea>
 			<br><br>
 			<!-- Tipo de Árquivo-->
 			<input type="file">
@@ -85,21 +85,91 @@
 			<br><br>
 			<!-- botao Limpar-->
 			<input type="reset">
-			
-			<br><br>
-			<!-- botao Limpar-->
-			<input type="reset">
-			<br><br>
-	        
+	       	
+	</form>
 	
+	<br>
+	<hr>
+	<br>
+	
+	
+	 <form>
+      <!-- campo obrigatório -->
+      <input type="text" required> <input type="submit">
+    </form>
+	
+	<br>
+	
+    <form>
+      <!-- campo obrigatório -->
+      <input type="email" required> <input type="submit">
+    </form>
+    
+	<br>
+	
+	<form>
+      <!-- campo oculto -->
+      <input type="hidden" value="Comodores">
+    </form>
+	<br>
+	
+    <form>
+      <!-- campo texto explicativo -->
+      <input type="text" placeholder="Nome Completo:">
+    </form>
+	
+	<br>
+	
+    <form>
+      <!-- campo desabilitado -->
+      <input type="text" disabled>
+    </form>
+	
+	<br>
+	
+    <form>
+      <!-- campo intervalo numérico -->
+      <input type="number" required min="18" max="75">
+      <input type="submit">
+	  	  
+    </form>
+	
+	<br>
+    
+	<form>
+      <!-- campo quantidade min e máx de caracteres -->
+      <input type="text" required minlength="4" maxlength="12">
+      <input type="submit">
 	
 	</form>
 	
+	<br>
 	
+	 <form>
+		<!-- tamanho do campo (size) -->
+		<input type="text" required size="60">
+		<input type="submit">
+    </form>
 	
+	<br>
 	
+    <!-- moldura que envolve o formulário -->
+    <fieldset>
+         <legend>Dados Pessoais</legend>
+		 <input type="text" required minlength="4" maxlength="12">
+      <input type="submit">
+		
+    </fieldset>
 	
+	<br>
 	
+    <fieldset>
+         <legend>Dados Profissionais</legend>
+    </fieldset>
+	
+	<fieldset>
+         <legend>Dados Bancários</legend>
+    </fieldset>
 	
 	
 <!--******************************** -->
