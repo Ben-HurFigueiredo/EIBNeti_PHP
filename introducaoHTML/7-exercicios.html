@@ -10,64 +10,82 @@
          <legend>CONTATE-NOS</legend>
 		 
 		 
-		 <table style="border:1px solid #000;width:100px">
+		 <table align="center" style="border:0px solid #000;width:800px">
 		 
 			 <tr align="center">
 			 
-				<td>1</td>
-				<td>2</td>
+				<td align="left">Nome*</td>
+				<td align="right"><input type="text" required minlength="4" maxlength="12"></td>
 				
 			 </tr>
 			 <tr align="center">
 			 
-				<td>a</td>
-				<td>b</td>
+				<td align="left">Email*</td>
+				<td align="right"><input type="email" required></td>
 				
 			 </tr>
 		 
 		     <tr align="center">
 			 
-				<td>1</td>
-				<td>2</td>
+				<td align="left">Telefone</td>
+				<td align="right"><input type="tell"></td>
 				
 			 </tr>
 			<tr align="center">
 			 
-				<td>1</td>
-				<td>2</td>
+				<td align="left">Endereço</td>
+				<td align="right"><input type="text"></td>
 				
 			 </tr>
 		 
 			<tr align="center">
 			 
-				<td>1</td>
-				<td>2</td>
+				<td align="left">Data de Nascimento</td>
+				<td align="right"><input type="date"></td>
 				
 			</tr>
 		 
 			<tr align="center">
 			 
-				<td>1</td>
-				<td>2</td>
+				<td align="left">Onde nos Conheceu?</td>
+				<td align="right">
+					<select>
+						<option> </option>
+						<option disabled> </option>
+						<option>Solteiro(a)</option>
+						<option>Viúvo(a)</option>
+						<option>Casado(a)</option>
+						<option>Divorciado(a)</option>
+						<option>Outros(as)</option>
+						
+					</select>
+				
+				</td>
 				
 			</tr>
 			
 			<tr align="center">
 			 
-				<td>1</td>
-				<td>2</td>
+				<td align="left">Mensagem</td>
+				<td align="right"><textarea cols="40" rows="5"> </textarea></td>
 				
 			</tr>
 			
 			<tr align="center">
 			 
-				<td>1</td>
-				<td>2</td>
+				<td align="left">Deseja receber novidades?</td>
+				<td align="right"><input type="checkbox"></td>
 				
 			 </tr>
 		 
 		 </table>
-		 	 
+		 
+         <br>
+         <table>
+            <tr>		 
+				<td align="right"> <input align="right" type="submit"> </td>
+			</tr>
+		 </table>
     </fieldset>
 	
 
@@ -76,171 +94,8 @@
 <br>
 <br>
 
-<hr>	
-<hr>	
-	<!-- marca a região do formulário -->
-	
-	<form>
-	
-		<input>	<!-- marca o campo de entrada de dados!! -->
-		
-		    <br><br>
-			DATA <input type="date"> <!-- tipo data -->
-			
-			<br><br>
-		    TEXTO<input type="text"> <!-- tipo texto -->
-			<br><br>
-		    NÚMERO<input type="number"> <!-- tipo número -->
-			<br><br>
-			E-MAIL<input type="email"> <!-- tipo e-mail -->
-			<br><br>
-			TELEFONE<input type="tel"> <!-- tipo telefone -->
-			<br><br>
-			COR<input type="color"> <!-- tipo telefone  COLOR-->
-		     
-		    <br><br>
-			<!-- tipo telefone  Radio-->
-			MASC<input type="radio" name="gender"> <!-- tipo telefone -->
-		    FEM<input type="radio" name="gender"> <!-- tipo telefone -->
-			Outros<input type="radio" name="gender"> <!-- tipo telefone -->
-			
-			<br><br>
-			<!-- tipo CAIXA DE VERIFICAÇÃO-->
-			
-			<input type="checkbox">Li e Aceito os termos...
-			
-			<br><br>
-			<!-- Tipo de Seleção-->
-			ESTADO CIVIL
-			<select>
-			    <option> </option>
-				<option disabled> </option>
-				<option>Solteiro(a)</option>
-			    <option>Viúvo(a)</option>
-				<option>Casado(a)</option>
-				<option>Divorciado(a)</option>
-				<option>Outros(as)</option>
-				
-			</select>
-			
-			<br><br>
-			CIDADES
-			<select>
-			    <optgroup label="Distrito Federal">
-					<option>Ceilândia</option>
-					<option>Taguatinga</option>
-				</optgroup>
-				<optgroup label="Goiás">
-					<option>Alexânia</option>
-					<option>Pirinópolis</option>
-				</optgroup>
-			</select>
-			
-	        <br><br>
-			<!-- Tipo de Senha-->
-			
-			SENHA
-			<input type="password">
-	
-			<br><br>
-			<!-- Tipo de Área de Texto-->
-			<textarea cols="40" rows="5"> </textarea>
-			<br><br>
-			<!-- Tipo de Árquivo-->
-			<input type="file">
-			
-			<br><br>
-			<!-- Botao Submeter-->
-			<input type="submit">
-			
-			<br><br>
-			<!-- botao Limpar-->
-			<input type="reset">
-	       	
-	</form>
-	
-	<br>
-	<hr>
-	<br>
 	
 	
-	 <form>
-      <!-- campo obrigatório -->
-      <input type="text" required> <input type="submit">
-    </form>
-	
-	<br>
-	
-    <form>
-      <!-- campo obrigatório -->
-      <input type="email" required> <input type="submit">
-    </form>
-    
-	<br>
-	
-	<form>
-      <!-- campo oculto -->
-      <input type="hidden" value="Comodores">
-    </form>
-	<br>
-	
-    <form>
-      <!-- campo texto explicativo -->
-      <input type="text" placeholder="Nome Completo:">
-    </form>
-	
-	<br>
-	
-    <form>
-      <!-- campo desabilitado -->
-      <input type="text" disabled>
-    </form>
-	
-	<br>
-	
-    <form>
-      <!-- campo intervalo numérico -->
-      <input type="number" required min="18" max="75">
-      <input type="submit">
-	  	  
-    </form>
-	
-	<br>
-    
-	<form>
-      <!-- campo quantidade min e máx de caracteres -->
-      <input type="text" required minlength="4" maxlength="12">
-      <input type="submit">
-	
-	</form>
-	
-	<br>
-	
-	 <form>
-		<!-- tamanho do campo (size) -->
-		<input type="text" required size="60">
-		<input type="submit">
-    </form>
-	
-	<br>
-	
-    <!-- moldura que envolve o formulário -->
-    <fieldset>
-         <legend>Dados Pessoais</legend>
-		 <input type="text" required minlength="4" maxlength="12">
-      <input type="submit">
-		
-    </fieldset>
-	
-	<br>
-	
-    <fieldset>
-         <legend>Dados Profissionais</legend>
-    </fieldset>
-	
-	<fieldset>
-         <legend>Dados Bancários</legend>
-    </fieldset>
 	
 	
 <!--******************************** -->
