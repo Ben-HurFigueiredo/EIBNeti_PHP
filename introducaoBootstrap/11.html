@@ -3,14 +3,21 @@
   <head>
     
 		<title charset="UTF-8">Layout de um Tipo de Site</title>
-		<link href="bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
-		<link href="bootstrap/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
 		<meta charset="UTF-8">
-						
+		
+		<!-- Inicia o cabeçalho!!! -->
+        <link href="bootstrap/css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="bootstrap/css/bootstrap-theme.css" type="text/css" rel="stylesheet">		
+		
+		<!-- Cris um link do jquery js -->
+		<script src="bootstrap/js/jquery.js"></script>
+		<!-- Cris um link com bootstrap js -->
+		<script src="bootstrap/js/bootstrap.js"></script>
+		
 		
 		<style>
 		
-			div{border: 1px  solid #000}
+			div{border: 1px  solid #}
 		
 		</style>
 		
@@ -75,18 +82,28 @@
 			
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav" style="font-size:13pt">
-								<li><a href="#">Início </a></li>
+								<li><a href="#" class="dropdown-toggle" 
+								       data-toggle="dropdown" role="button" aria-haspopup="true" 
+									   aria-expanded="false">Início<span class="caret"></span></a>
+																	
+									  <ul class="dropdown-menu">
+										<li><a href="#">O Curso</a></li>
+										<li><a href="#">Módulos</a></li>
+										<li><a href="#">Apostilas</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Vídeo Aulas</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Fórum dos Alunos</a></li>
+									  </ul>
+								</li>
 								<li><a href="#">Empresa </a></li>
 								<li><a href="#">Serviços </a></li>
 								<li><a href="#">Potifólio </a></li>
 								<li><a href="#">Contato </a></li>
 							</ul>
 						</div>
-					
                 </nav>					
-			
-			</div>
-		
+			</div>		
 	</div>
    
 	  
@@ -102,8 +119,8 @@
 	  
 	  
 	    
-<!--*********************************** -->
-<!--*********************************** -->
+<!--*********************************** >
+<!--*********************************** >
 	<br>
 	<br>
 	<br>
