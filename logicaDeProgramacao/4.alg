@@ -7,9 +7,11 @@ var
 
  x:inteiro
  y:inteiro
- z:inteiro
+
  
- soma, subtracao, multiplicacao, divisao, modulo, potencia: real
+ soma, subtracao, multiplicacao, divisao,modulo, potencia: real
+ 
+ 
  
 inicio
 // Seção de Comandos 
@@ -19,9 +21,6 @@ inicio
   
   escreval ("Digite o valor de y:")
   leia (y)
-  
-  escreval ("Digite o valor de z:")
-  leia (z)
   
   soma <- (x + y)
   subtracao <- (x - y)
