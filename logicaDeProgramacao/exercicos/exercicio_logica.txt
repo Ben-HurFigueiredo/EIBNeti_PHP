@@ -1,0 +1,17 @@
+Procedimentos para:
+
+-Calculo de média de 4 notas
+  - verificar se o aluno foi aprovado ou reprovado 
+  - Teste lógico (media >= 7)
+  - exibir a media e a situação do aluno
+
+-Informar a idade
+  - verifica se a idade permite entrar na boate 
+  - Teste lógico (idade >= 18)
+  - exibir a idade e a situação
+
+-Informar nome do vendedor, total de vendas no mês, salário do vendedor
+  - Teste lógico (totalVendas >= 3000) comissão de 2% sobre o totalVendas
+  - Teste lógico (totalVendas >= 6000) comissão de 3% sobre o totalVendas
+    - Teste lógico (totalVendas >= 10000) comissão de 5% sobre o totalVendas
+  - informar nome vendedor, total de vendas, salário, comissão e o totalSalarial  
