@@ -5,7 +5,8 @@
     <head>
     
         <title>01 - JS </title>
-    
+        <meta charset="UTF-8">
+        
     </head>
 
     <body>
@@ -23,36 +24,76 @@
             
             */
             
-            var nome;
-            // entrada de dados
-            
-            nome= window.prompt("Digite o seu nome: ");
-            
-            // Saida de Dados
-            
-            window.alert ("Nome: " + nome);
-            
-            
-            // Janela confirmar Retorna booleano
-            
-            resp = window.confirm ("Deseja Sair? ");
-            
-            // Verifica se resp é verdadiro ou nao?
-            
-            if(resp){
+            function  Exibir(){
                 
-                alert("TCHAU!!!");
+                var nome;
+                // entrada de dados
+
+                nome= window.prompt("Digite o seu nome: ");
+
+                // Saida de Dados
+
+                window.alert ("Nome: " + nome);
+
+            }
+            function Responder(){
                 
-            }else{
-                
-                alert("Então Fica!")
-                
+            
+                // Janela confirmar Retorna booleano
+
+                resp = window.confirm ("Deseja Sair? ");
+
+                // Verifica se resp é verdadiro ou nao?
+
+                if(resp){
+
+                    alert("TCHAU!!!");
+
+                }else{
+
+                    alert("Saída Canelada!!");
+
+                }
                 
             }
             
             
-                   
+            // Estrutura de Controle function()
+            
+            
+            function Somar (x,y){
+                
+                return x + y;
+                
+            }
+            
+    
         </script>
+    
+        
+        <!-- Criar um evento para chamar a function 
+            onload 
+            onclick-> clica em cima
+            onmouse
+        -->
+        
+        
+        <button onclick="alert(Somar(10,20))">Função Somar</button>
+        
+        <br>
+        <br>
+        <br>
+        
+        <button onclick="Exibir()">Função Exibir</button>
+        
+        <br>
+        <br>
+        <br>
+        
+        <button onclick="Responder()">Função Sair</button>
+        
+        
+        
         
     </body>
 </html>

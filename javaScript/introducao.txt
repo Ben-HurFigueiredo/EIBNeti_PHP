@@ -1,6 +1,6 @@
-JavaScript (Objetos)
+JavaScript (Objetos do Navegador)
 
-Principais Objetos (Window, Document)
+Principais Objetos Mais Usados (Window, Document)
 
 Objeto window -> Propiedades da Janela navegador
 
