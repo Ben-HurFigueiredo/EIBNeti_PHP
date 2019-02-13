@@ -1,0 +1,19 @@
+JavaScript (Objetos)
+
+Principais Objetos (Window, Document)
+
+Objeto window -> Propiedades da Janela navegador
+
+Objeto document -> Propriedades do documento (Corpo)
+
+-----------------------------------------------------
+I/O Imput/ Output (entrada e saída)
+
+Entrada de Dados window.prompt (" ",valor) string
+
+
+Saída de Dados window.alert ("Janela Alerta")
+Saída de Dados window.alert ("Janela ")
+
+
+
