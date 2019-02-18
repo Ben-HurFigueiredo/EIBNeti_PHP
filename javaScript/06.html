@@ -1,0 +1,32 @@
+<!Doctype html>
+<html lang="pt-BR">
+	<head>
+		<title>06 - JS</title>
+		<meta charset="UTF-8">		
+	</head>
+	<body>
+		<h3>Redirecionador de URLs</h3>
+		<button onclick="Redireciona()">FACEBOOK</button>
+		<button onclick="Temporizador()">GOOGLE</button>
+		
+		<script>
+		function Redireciona(){
+			var resp = 
+			confirm("Deseja ir para o FACEBOOK?");
+			if(resp){
+				location="https://facebook.com";
+			}else{
+				alert("Optou por permanecer na página");
+			}
+		}
+		function Temporizador(){
+			var resp =
+			confirm("Pressione OK, aguarde 5 seg");
+			if(resp){
+				setTimeout(
+					"location='https://google.com'",5000);
+			}
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!Doctype html>
+<html lang="pt-BR">
+	<head>
+		<title>05 - JS</title>
+		<meta charset="UTF-8">		
+	</head>
+	<body>
+		<h3>Javascript Ocultar/Mostrar</h3>
+		<h2 id="titulo">Título da Página</h2>
+		<button onclick="Ocultar()">Ocultar</button> | 
+		<button onclick="Mostrar()">Mostrar</button>
+		<script>
+		function Ocultar(){
+			document.getElementById("titulo").style.display=
+			"none";
+		}
+		function Mostrar(){
+			document.getElementById("titulo").style.display=
+			"block";
+		}
+		</script>
+	</body>
+</html>

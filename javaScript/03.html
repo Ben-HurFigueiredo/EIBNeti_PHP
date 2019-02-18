@@ -1,0 +1,24 @@
+<!Doctype html>
+<html lang="pt-BR">
+	<head>
+		<title>03 - JS</title>
+		<meta charset="UTF-8">		
+	</head>
+	<body style="text-align:center">
+		<h3>Javascript Alterar Atributos</h3>
+		<img id="imagem" src="lamp_off.jpg"> <br><br>
+		
+		<button onclick="Acender()">Acender</button> | 
+		<button onclick="Apagar()">Apagar</button>
+		<script>
+		   function Acender(){	
+			document.getElementById("imagem").src = 
+			"lamp_on.jpg";
+		   }
+		   function Apagar(){	
+			document.getElementById("imagem").src = 
+			"lamp_off.jpg";
+		   }
+		</script>
+	</body>
+</html>
