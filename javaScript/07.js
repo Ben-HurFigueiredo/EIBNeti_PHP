@@ -6,6 +6,7 @@ function Cadastro() {
 	var form = document.getElementById("formulario");
 	
     /* object.attribute.value; */
+    
 	var  nome = form.nome.value;
 	var email = form.email.value;
 	var senha = form.senha.value;
@@ -19,6 +20,7 @@ function Cadastro() {
         document.write("Senha:" + senha + "<hr>");
         
 	}else{
+        
 		alert("preencha Corretamete os Dados!");
         history.back("07.html");
 	}
