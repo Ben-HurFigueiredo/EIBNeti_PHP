@@ -1,0 +1,21 @@
+Pacote Programa
+- wamp server  (windows)
+- xampp server (xplataforma)
+- lamp  server (linux)
+- mamp  server (mac)
+---------------------------------------------------
+X      (Multiplataforma)
+Apache (Interpretador)
+MySQL  (Maria DB)
+PP     (PHP) e (Perl)
+---------------------------------------------------
+Painel de Controle
+---------------------------------------------------
+Parâmetros de Config 
+Servidor: localhost ou 127.0.0.1
+Usuário:  root
+Senha:
+Porta:3306
+---------------------------------------------------
+Barra de Navegação: localhost (dashboard)
+C:/xampp/htdocs (pública)
