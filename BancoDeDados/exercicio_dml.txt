@@ -1,0 +1,27 @@
+Exercício:
+
+|nome,sobrenome,genero,data_nascimento,salario,tem_filho|
+
+1) Inserir os seguintes registros na tabela aluno:
+
+- Mariana de Souza, Feminino (F), 1978-12-01, 2089.85, Sim ou Não (S,N)
+
+INSERT INTO tb_aluno(nome,sobrenome,genero,data_nascimento,salario,tem_filho)
+VALUES('Mariana','de Souza','F','1978-12-01',2089.85,'S');
+
+- Pafuncio da Silva, Masculino (M), 2000-03-10, 2089.85, Sim ou Não (S,N)
+
+INSERT INTO tb_aluno
+(nome,sobrenome,genero,data_nascimento,salario,tem_filho)
+VALUES('Pafuncio','da Silva','M','2000-03-10',2089.85,'N');
+
+2) Atualizar os seguintes registros da seguinte forma:
+
+- id 1 salário -> valor 4200.89, id 2 data_nascimento -> 2002-04-20
+
+UPDATE tb_aluno SET salario = 4200.89 WHERE id = 1;
+UPDATE tb_aluno SET data_nascimento = 2002-04-20 WHERE id = 2;
+
+3) Deletar o registro onde o id = 1
+
+DELETE FROM tb_aluno WHERE id = 1;

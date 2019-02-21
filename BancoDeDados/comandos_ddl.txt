@@ -1,0 +1,18 @@
+SQL (Structure Query Language) Linguagem de Requisição Estruturada
+----------------------------------------------------------------
+- Comandos DDL (Data Definition Language) Linguagem de Definição de Dados
+  CREATE (criar)
+    - DATABASE (banco de dados)
+    - TABLE    (tabela)
+    - VIEWS    (visões)
+  ALTER (alterar)
+    - TABLE (tabela)
+      - RENAME (renomear)
+      - REMOVE (remover)
+      - ADD    (adicionar)
+  DROP (eliminar)
+      - DATABASE (banco de dados)
+      - TABLE    (tabela)
+      - COLUMN   (coluna)
+  USE  (selecionar banco de dados)
+----------------------------------------------------------------      

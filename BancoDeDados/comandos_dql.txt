@@ -1,0 +1,20 @@
+SQL (Structure Query Language) Linguagem de Requisição Estruturada
+----------------------------------------------------------------
+- Comandos DQL (Data Query Language) Linguagem de Consulta de Dados
+
+  Selecionar Tudo -> SELECT campo,campo FROM 'tabela'
+
+  Utilizamos a cláusula WHERE (ONDE)
+  Selecionar Um registro -> SELECT campo,campo FROM 'tabela' WHERE id = 'valor'
+
+  Exercício - CRIAR uma tabela chamada tb_usuario 
+  Campo         Tipo    Tamanho   Restrições
+  id            int     11        Não Nulo, P.K, A.I.
+  login         varchar 20        Não Nulo
+  email         varchar 60        Não Nulo
+  senha         varchar 16        Não Nulo
+  genero        char    1         Não Nulo
+  data_cadastro date              Não Nulo
+  cidade        varchar 20        Não Nulo
+  uf            char    2         Não Nulo
+  

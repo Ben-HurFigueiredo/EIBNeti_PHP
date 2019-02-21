@@ -1,0 +1,37 @@
+CREATE DATABASE php_noite;
+
+USE php_noite;
+
+CREATE TABLE tb_aluno(
+  id   int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nome varchar(20) NOT NULL,
+  sobrenome varchar(2) NOT NULL,
+  genero char(1) NOT NULL,
+  data_nascimento date NOT NULL,
+  salario double NULL,
+  tem_filho ENUM('S','N') NOT NULL
+);
+
+CREATE VIEW v_aluno AS SELECT * FROM tb_aluno;
+
+CREATE TABLE tb_professor(
+  id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT
+);
+
+ALTER TABLE tb_professor RENAME tb_professor_;
+
+ALTER TABLE tb_professor ADD COLUMN(
+ nome varchar(20) NOT NULL,
+ sobrenome varchar(20) NOT NULL,
+ titulacao varchar(20) NOT NULL,
+ disciplica text NULL
+);
+
+INSERT INTO tb_professor(nome,sobrenome,titulacao,disciplina)VALUES('','','','');
+
+UPDATE tb_professor SET nome = 'Ana', sobrenome = 'Paula', titulacao = 'doutorado', disciplina = 'historia' WHERE id = 1;
+
+UPDATE tb_professor SET disciplina = 'matematica' WHERE id != 1;
+
+DELETE FROM tb_professor WHERE id = 2;
+
