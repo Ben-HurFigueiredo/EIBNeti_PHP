@@ -1,0 +1,24 @@
+CREATE DATABASE db_loja_noite;
+
+CREATE table profissao(
+  id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  descricao varchar(30) NOT NULL
+);
+CREATE TABLE uf(
+  id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  sigla char(2) NOT NULL,
+  descricao varchar(30) NOT NULL
+);
+CREATE TABLE cliente(
+  id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  cpf varchar(20) NOT NULL UNIQUE,
+  nome varchar(20) NOT NULL,
+  sobrenome varchar(20) NOT NULL,
+  data_nasc date NOT NULL,
+  salario double NULL,
+  id_profissao int(11) NULL,
+  id_uf int(11) NULL,
+  INDEX(id_profissao, id_uf),
+  CONSTRAINT FOREIGN KEY(id_uf) REFERENCES   uf(id) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT FOREIGN KEY(id_profissao)   REFERENCES profissao(id) ON DELETE SET NULL   ON UPDATE CASCADE
+)

@@ -1,0 +1,152 @@
+CREATE DATABASE db_loja_noite;
+
+CREATE table profissao(
+  id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  descricao varchar(30) NOT NULL
+);
+CREATE TABLE uf(
+  id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  sigla char(2) NOT NULL,
+  descricao varchar(30) NOT NULL
+);
+CREATE TABLE cliente(
+  id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  cpf varchar(20) NOT NULL UNIQUE,
+  nome varchar(20) NOT NULL,
+  sobrenome varchar(20) NOT NULL,
+  data_nasc date NOT NULL,
+  salario double NULL,
+  id_profissao int(11) NULL,
+  id_uf int(11) NULL,
+  INDEX(id_profissao, id_uf),
+  CONSTRAINT FOREIGN KEY(id_uf) REFERENCES   uf(id) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT FOREIGN KEY(id_profissao)   REFERENCES profissao(id) ON DELETE SET NULL   ON UPDATE CASCADE
+)
+
+USE db_loja_noite;
+
+INSERT INTO uf(sigla,descricao)VALUES('AM','Amazonas');
+INSERT INTO uf(sigla,descricao)VALUES('AP','Amapa');
+INSERT INTO uf(sigla,descricao)VALUES('AC','Acre');
+INSERT INTO uf(sigla,descricao)VALUES('AL','Alagoas');
+INSERT INTO uf(sigla,descricao)VALUES('BA','Bahia');
+INSERT INTO uf(sigla,descricao)VALUES('CE','Ceara');
+INSERT INTO uf(sigla,descricao)VALUES('DF','Distrito Federal');
+INSERT INTO uf(sigla,descricao)VALUES('ES','Espirito Santo');
+INSERT INTO uf(sigla,descricao)VALUES('GO','Goias');
+INSERT INTO uf(sigla,descricao)VALUES('MA','Maranhao');
+INSERT INTO uf(sigla,descricao)VALUES('MT','Mato Grosso');
+INSERT INTO uf(sigla,descricao)VALUES('MS','Mato Grosso do Sul');
+INSERT INTO uf(sigla,descricao)VALUES('MG','Minas Gerais');
+INSERT INTO uf(sigla,descricao)VALUES('PA','Para');
+INSERT INTO uf(sigla,descricao)VALUES('PB','Paraiba');
+INSERT INTO uf(sigla,descricao)VALUES('PR','Parana');
+INSERT INTO uf(sigla,descricao)VALUES('PE','Pernambuco');
+INSERT INTO uf(sigla,descricao)VALUES('PI','Piaui');
+INSERT INTO uf(sigla,descricao)VALUES('RJ','Rio de Janeiro');
+INSERT INTO uf(sigla,descricao)VALUES('RN','Rio Grande do Norte');
+INSERT INTO uf(sigla,descricao)VALUES('RS','Rio Grande do Sul');
+INSERT INTO uf(sigla,descricao)VALUES('RO','Rondonia');
+INSERT INTO uf(sigla,descricao)VALUES('RR','Roraima');
+INSERT INTO uf(sigla,descricao)VALUES('SC','Santa Catarina');
+INSERT INTO uf(sigla,descricao)VALUES('SP','São Paulo');
+INSERT INTO uf(sigla,descricao)VALUES('SE','Sergipe');
+INSERT INTO uf(sigla,descricao)VALUES('TO','Tocantins');
+
+INSERT INTO profissao(descricao)VALUE('Administrador');
+INSERT INTO profissao(descricao)VALUE('Advogado');
+INSERT INTO profissao(descricao)VALUE('Biotecnólogo');
+INSERT INTO profissao(descricao)VALUE('Bombeiro');
+INSERT INTO profissao(descricao)VALUE('Contador');
+INSERT INTO profissao(descricao)VALUE('Cozinheiro');
+INSERT INTO profissao(descricao)VALUE('Diarista');
+INSERT INTO profissao(descricao)VALUE('Dentista');
+INSERT INTO profissao(descricao)VALUE('Engenheiro');
+INSERT INTO profissao(descricao)VALUE('Endocrinologista');
+INSERT INTO profissao(descricao)VALUE('Farmacêutico');
+INSERT INTO profissao(descricao)VALUE('Professor');
+
+CREATE VIEW inner_simples AS SELECT 
+
+cliente.cpf AS CPFCli,
+cliente.nome AS NomeCli,
+cliente.sobrenome AS SobrenomeCli,
+cliente.data_nasc AS DNCli,
+cliente.salario AS SalarioCli,
+profissao.descricao AS ProfissaoCli
+
+FROM cliente JOIN profissao 
+ON cliente.id_profissao = profissao.id; 
+
+
+CREATE VIEW inner_simples_uf AS SELECT 
+
+cliente.cpf AS CPFCli,
+cliente.nome AS NomeCli,
+cliente.sobrenome AS SobrenomeCli,
+cliente.data_nasc AS DNCli,
+cliente.salario AS SalarioCli,
+uf.sigla AS SiglaUF,
+uf.descricao AS DescricaoUF
+
+FROM cliente JOIN uf 
+ON cliente.id_uf = uf.id;
+
+
+Tabela profissao Tabela: Cliente  Tabela: uf VIEW inner_composto
+
+CREATE VIEW inner_composto AS SELECT 
+
+cliente.cpf AS CPFCli,
+cliente.nome AS NomeCli,
+cliente.sobrenome AS SobrenomeCli,
+cliente.data_nasc AS DNCli,
+cliente.salario AS SalarioCli,
+uf.sigla AS SiglaUF,
+uf.descricao AS DescricaoUF,
+profissao.descricao AS ProfissaoCli
+
+FROM cliente JOIN uf ON cliente.id_uf = uf.id JOIN profissao 
+ON cliente.id_profissao = profissao.id;
+
+LEFT JOIN -> todos os registros da Tabela Esquerda, mesmo que na Tabela
+Direita tenha campos com o valor NULL 
+RIGHT JOIN -> todos os registros da Tabela Direita, mesmo que na Tabela
+Esquerda tenha campos com o valor NULL 
+
+CREATE VIEW left_join  AS SELECT 
+
+cliente.cpf,
+cliente.nome,
+cliente.sobrenome,
+cliente.data_nasc,
+cliente.salario,
+profissao.descricao FROM cliente LEFT JOIN profissao 
+ON cliente.id_profissao = profissao.id;
+
+CREATE VIEW right_join  AS SELECT 
+
+cliente.cpf,
+cliente.nome,
+cliente.sobrenome,
+cliente.data_nasc,
+cliente.salario,
+profissao.descricao FROM cliente RIGHT JOIN profissao 
+ON cliente.id_profissao = profissao.id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

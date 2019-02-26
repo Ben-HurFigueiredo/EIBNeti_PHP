@@ -9,6 +9,7 @@ SQL (Structure Query Language) Linguagem de Requisição Estruturada
 
   Exercício - CRIAR uma tabela chamada tb_usuario 
   Campo         Tipo    Tamanho   Restrições
+  ----------------------------------------------------
   id            int     11        Não Nulo, P.K, A.I.
   login         varchar 20        Não Nulo
   email         varchar 60        Não Nulo
@@ -17,4 +18,41 @@ SQL (Structure Query Language) Linguagem de Requisição Estruturada
   data_cadastro date              Não Nulo
   cidade        varchar 20        Não Nulo
   uf            char    2         Não Nulo
-  
+ -----------------------------------------------------
+ CREATE TABLE tb_usuario(
+  id            int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  login         varchar(20)       NOT NULL,
+  email         varchar(60)       NOT NULL,
+  senha         varchar(16)       NOT NULL,
+  genero        char(1)           NOT NULL,
+  data_cadastro date              NOT NULL,
+  cidade        varchar(20)       NOT NULL,
+  uf            char(2)           NOT NULL
+);
+------------------------------------------------------
+Cláusulas SQL
+ FROM     (tabela origem)
+ WHERE    (condição ONDE)
+ ORDER BY (ordenar por)   ASC, DESC
+ LIMIT    (offset=registro inicial,quantidade=registros)
+ LIKE     (como -> comparação literal, busca)
+ BETWEEN  (entre -> define um intervalo entre valores)
+ IN       (define um grupo de valores)
+ UNION    (une duas ou mais consultas, desde tabelas tenham  campo  com o mesmo nome)
+ GROUP BY (agrupar por) 
+ HAVING   (que tenha esse critério)
+-------------------------------------------------------
+Funções agregadas
+ COUNT() -> contar
+ SUM()   -> somar
+ AVG()   -> calcula média
+-------------------------------------------------------
+SELECT * FROM tb_usuario ORDER BY login ASC;
+SELECT * FROM tb_usuario ORDER BY id DESC;
+-------------------------------------------------------
+Função
+ MAX() -> retorna o maior valor
+ MIN() -> retorna o menor valor
+-------------------------------------------------------
+
+

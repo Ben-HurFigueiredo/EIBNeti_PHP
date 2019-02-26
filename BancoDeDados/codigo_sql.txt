@@ -27,6 +27,15 @@ ALTER TABLE tb_professor ADD COLUMN(
  disciplica text NULL
 );
 
+INSERT INTO tb_aluno(nome,sobrenome,genero,data_nascimento,salario,tem_filho)
+VALUES('Aline','da Silva','F','2001-05-18',230.00,'N');
+
+INSERT INTO tb_aluno(nome,sobrenome,genero,data_nascimento,salario,tem_filho)
+VALUES('Rodrigo','Maia','M','1999-12-01',8500.00,'S');
+
+INSERT INTO tb_aluno(nome,sobrenome,genero,data_nascimento,salario,tem_filho)
+VALUES('Ana','Mouza','F','1980-06-25',4500.80,'N');
+
 INSERT INTO tb_professor(nome,sobrenome,titulacao,disciplina)VALUES('','','','');
 
 UPDATE tb_professor SET nome = 'Ana', sobrenome = 'Paula', titulacao = 'doutorado', disciplina = 'historia' WHERE id = 1;
@@ -34,4 +43,29 @@ UPDATE tb_professor SET nome = 'Ana', sobrenome = 'Paula', titulacao = 'doutorad
 UPDATE tb_professor SET disciplina = 'matematica' WHERE id != 1;
 
 DELETE FROM tb_professor WHERE id = 2;
+
+SELECT * FROM tb_usuario ORDER BY id DESC;
+
+SELECT * FROM tb_usuario LIMIT 0, 3;
+
+SELECT * FROM tb_usuario WHERE login LIKE '%na%';
+
+SELECT * FROM tb_usuario WHERE data_cadastro BETWEEN 
+'2018-11-30' AND '2019-02-28';
+
+SELECT * FROM tb_usuario WHERE uf IN('DF','GO');
+
+SELECT nome FROM tb_aluno UNION  SELECT nome FROM tb_professor;
+
+SELECT COUNT(id) AS TotalUsuario FROM tb_usuario;
+
+SELECT AVG(salario) FROM tb_aluno;
+
+SELECT SUM(salario) AS TotalSalarial FROM tb_aluno;
+
+SELECT COUNT(id) AS TotalPorUF, uf FROM tb_usuario GROUP BY uf;
+
+SELECT COUNT(id) AS TotalPorUF, uf FROM tb_usuario GROUP BY uf HAVING COUNT(id) > 2;
+
+
 
