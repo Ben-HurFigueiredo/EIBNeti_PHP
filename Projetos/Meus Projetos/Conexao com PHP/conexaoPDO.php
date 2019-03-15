@@ -1,26 +1,99 @@
-<?php
+<html>
+    
+    <title>
+        
+        
+    </title>
+
+    <body>
+        
+        <?php
 
 
 
-    try{
+            try{
 
-        $obj = new PDO("mysql:database=db_loja_noite;host=localhost","root","");
-        echo "conectou";
-    }catch(PDOException $e){
+                $obj = new PDO("mysql:dbname=db_loja_noite;host=localhost","root","");
 
-        echo "Erro ao Conectar: ". getMessage($e);
+            }catch(PDOException $e){
 
-    }catch(Exception $e){
+                echo "Erro ao Conectar: ". $e->getMessage();
 
-
-       echo "Erro Generico: ". getMessage($e);
-
-    }
+            }catch(Exception $e){
 
 
+               echo "Erro Generico: ". $e->getMessage();
 
-  $pdo = $obj->fechAll(PDO::FECH_ASSOC);
+            }
 
 
 
-?>
+
+           $pdo = $obj->query("SELECT * FROM v_inner_simples_cli_uf");
+           $resultado = $pdo->fetchAll(PDO::FETCH_ASSOC);
+
+           echo "<pre>";
+           print_r($resultado);
+           echo "</pre>";
+
+        ?>
+
+           <table width="90%" align="center" border="1">
+               
+             <tr>
+                 
+                     <?php
+                        
+                       $contar = $resultado->rowCount();
+                 
+                        foreach($resultado[0] as $k=>$v){
+                            
+                            echo "<th>$k</th>";
+                                                       
+                        }   
+                 
+                 ?></tr><?php    
+                 
+                        for($i=0; $i< count($resultado); $i++){
+                        
+                            echo"<tr>";
+                             foreach($resultado[$i] as $k=>$v){
+
+                                    echo "<td>$v</td>";
+
+                             }
+                            echo"<tr>";
+
+                        } 
+                            
+                             
+                             
+                             
+                         
+                         
+                     ?>
+                     
+                     
+                     
+                 
+             </tr>  
+               
+               
+               
+               
+               
+               
+               
+           </table>
+
+
+
+
+        
+        
+        
+        
+    </body>
+    
+</html>
+

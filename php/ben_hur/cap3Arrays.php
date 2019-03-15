@@ -236,7 +236,7 @@
              
          echo "<pre>";     
          print_r($bebidas);
-        echo "</pre>";         
+         echo "</pre>";         
              
              
        
