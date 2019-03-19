@@ -1,7 +1,7 @@
 <html>
     
     <title>
-        
+        <meta charset="utf-8">
         
     </title>
 
@@ -40,11 +40,11 @@
 
            <table width="90%" align="center" border="1">
                
-             <tr>
+                <tr>
                  
-                     <?php
+                <?php
                         
-                       $contar = $resultado->rowCount();
+                       //$contar = $resultado->rowCount();
                  
                         foreach($resultado[0] as $k=>$v){
                             
@@ -52,46 +52,30 @@
                                                        
                         }   
                  
-                 ?></tr><?php    
+                ?>
+                    
+                </tr>
+                    
+                <?php    
                  
-                        for($i=0; $i< count($resultado); $i++){
-                        
-                            echo"<tr>";
-                             foreach($resultado[$i] as $k=>$v){
+                    for($i=0; $i< count($resultado); $i++){
+                    
+                        echo"<tr>";
+                         foreach($resultado[$i] as $k=>$v){
 
-                                    echo "<td>$v</td>";
+                                echo "<td>$v</td>";
 
-                             }
-                            echo"<tr>";
+                         }
+                        echo"</tr>";
 
-                        } 
-                            
-                             
-                             
-                             
-                         
-                         
-                     ?>
-                     
-                     
-                     
-                 
-             </tr>  
-               
-               
-               
-               
-               
-               
-               
+                    } 
+                                                   
+                ?>
+                                                  
            </table>
 
 
-
-
-        
-        
-        
+  
         
     </body>
     

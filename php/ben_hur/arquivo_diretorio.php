@@ -11,10 +11,10 @@
 
 <h3> Envio de Arquivos</h3>
 
-<form method="post" action="upload.php" enctype="multipart/form-data">
+<form onsubmit="mensagem()" method="post" action="upload.php" enctype="multipart/form-data">
     
     <input type="file" name="arquivo" required>
-    <input type="submit" value="Upload" onclick="mensagem()">
+    <input type="submit" value="Upload" >
     
       
 </form>
@@ -24,6 +24,8 @@
         function mensagem(){
             
             window.alert("Arquivo Enviado Com Sucesso!");
+            
+            return true;
         }
 
         
@@ -35,20 +37,3 @@
     
 </html>
 
-
-<?php
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
