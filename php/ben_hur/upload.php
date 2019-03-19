@@ -114,24 +114,98 @@ echo "<hr noshade>";
 #*/
 
 
-$ponteiro2 = fopen("arquivo.php","w");
+$ponteiro2 = fopen("arquivosDeUploads/arquivoDeTexto.txt","w");
 
+$bytes = fwrite($ponteiro2, "Arquivo Gravdo Com Sucesso! \n");
 
+echo "Foram gravados $bytes bytes";
 
-fwrite($ponteiro2, "Linha 1 \n");
-fwrite($ponteiro2, "Linha 2 \n");
-fwrite($ponteiro2, "Linha 3 \n");
+echo "<hr>";
+# Grava uma Sting independentemente de Identificador
 
+file_put_contents("arquivosDeUploads/arquivoDeTexto.txt","Conteúdo gravado novamente");
 
-while(!feof($ponteiro2)){
-       
-    $buffer2 = fgets($ponteiro2);
-    echo "$buffer2 <br>";
-          
+/* lê o conteúdo do arquivo, independente de identificador */
+echo file_get_contents("arquivosDeUploads/arquivoDeTexto.txt") , "<hr>";
+
+/* lê o arquivo e retorna um array, cada linha lida representa índice desse array */
+
+$arrayLeitura = file("arquivo/comandos_saida.php");
+//print_r($arrayLeitura);
+foreach($arrayLeitura as $linha){
+	echo "$linha <br>";
 }
 
-# fecha o Arquivo 
-fclose($ponteiro2);
+
+echo "<hr>";
+
+
+
+/* copy - copia arquivo para destino/diretório que existe */
+$origem = "arquivo/comandos_saida.php";
+$destino = "backup/comandos_saida.php";
+
+/* verifica se o diretório foi criado */
+
+if(mkdir("backup")){
+	echo "Diretório foi criado!!! <hr>";
+}else{
+    
+    echo "Diretório já Existente";
+    
+}
+
+/* verifica se localização se refere a um diretório */
+if(is_dir("backup")){
+	/* efetua a cópia do arquivo */
+	if(copy($origem, $destino)){
+		echo "Arquivo copiado! <hr>";
+	}else{
+		echo "Erro ao copiar arquivo! <hr>";
+	}
+}
+
+
+/* rename - renomeia arquivos ou diretório */
+$velho_nome = "backup/comandos_saida.php";
+$novo_nome  = "backup/bkp_arquivo.php";
+
+
+if(rename($velho_nome,$novo_nome)){
+	echo "Arquivo renomeado! <hr>";
+}else{
+	echo "Erro ao renomear arquivo! <hr>";
+}
+
+/* retorna o diretório corrente - caminho absoluto */
+echo "O diretório corrente é " . getcwd();
+
+
+
+/* apaga diretórios, se o mesmo estiver vazio */
+if(unlink("backup/bkp_arquivo.php")){
+	echo "Arquivo apagado! <hr>";
+	if(rmdir("backup")){
+		echo "Diretório apagado! <hr>";
+	}
+}
+
+/* abre um diretório e retorna um identificador */
+$dir = opendir("backup");
+
+/* enquanto estiver lendo o diretório */
+while($arquivo = readdir($dir)){
+	echo "$arquivo <br>";
+}
+
+/* fecha o diretório */
+closedir($dir);
+
+
+
+// Dúvidas: como nao fazer para nao aparecer o 'warning' na tela (erro de criação de pastas / diretório não vazio)???
+
+//Como faz paraapagar todas as pastas de um arquivo php?
 
 
 
