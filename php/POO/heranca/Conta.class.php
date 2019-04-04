@@ -29,7 +29,7 @@
          if($this->Cancelada == true){
              
              
-             echo "Abrir Conta!";
+             echo "Abertura de Conta feita Com Sucesso!";
              $this->Cancelada = false;
              
              
@@ -55,6 +55,9 @@
          
          return $this->Saldo;
      }
-
+     /* somente declarado, implementados em todas as classes-filhas */
+     
+     abstract function
+     transferir(Conta $conta, $quantia);
      
  }

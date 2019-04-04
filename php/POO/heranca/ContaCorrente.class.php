@@ -6,7 +6,7 @@
 
 # A Classe filha Extende da classe Pai!
 
-    class ContaCorrente extends Conta{
+   final class ContaCorrente extends Conta{
         
       var $Limite;
         
@@ -18,12 +18,12 @@
             parent::__construct($agencia, $numero, $titular, $senha, $saldo);
             $this->Limite = $limite;
         }
-       function abrirConta(){
+       final function abrirConta(){
            
            parent::abrirConta();
            
        }
-       function Sacar($quantia){
+       final function Sacar($quantia){
          #polimorfismo
         if(($this->Saldo + $this->Limite) >= $quantia){
             
@@ -36,7 +36,7 @@
         
         
        }
-       function Depositar($quantia){
+       final function Depositar($quantia){
            
            #polimorfismo
            if($quantia > 0 && $quantia <= 5000){
@@ -50,12 +50,18 @@
                
            }
        }
-       function obterSaldo(){
+       final function obterSaldo(){
            
            #override
            return parrent::obterSaldo();
            
        }
-        
+       
+       final function transferir(Conta $conta, $quantia){
+           
+           $this->Sacar($quantia);
+           $conta->Depositar($quantia);
+              
+       }
         
     }
