@@ -15,7 +15,17 @@ define("DBNAME","php_integrado");
 
 $conn = mysqli_connect(HOST,USER,PASS, NULL, PORT,NULL) or die(mysqli_error());
 
-mysqli_select_db($conn,DBNAME) or die(mysqli_error());
+try{
+       
+    mysqli_select_db($conn,DBNAME) or die(mysqli_error());
+    
+    
+}catch(Exception){
+    
+    echo "Não Conectado!";
+    
+}
+
 
 
 

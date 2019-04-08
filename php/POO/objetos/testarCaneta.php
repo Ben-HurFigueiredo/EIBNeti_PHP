@@ -8,9 +8,6 @@ $teste1 = new Caneta();
 
 
 
-
-
-
 #passar valores para os atributos
 
 $teste1->Modelo = "Bic";
