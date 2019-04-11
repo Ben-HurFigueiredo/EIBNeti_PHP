@@ -11,7 +11,7 @@
         <form method="post" action="autenticar.php">
         
             Login
-            <input
+            <input>
         
         
         </form>
